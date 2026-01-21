@@ -1,0 +1,21 @@
+새로운 프로젝트에 사용할 데이터베이스 생성
+
+1. mysql 의 root 로 접속해서 db 생성
+    create database kiosk;
+
+2. 유저 만들기 및 권한부여
+    use kiosk
+    create user 'boot'@'%' indentified by '1234';
+    grant all privileges on kiosk.* to 'boot'@'%' with grant option;
+    flush privileges;
+
+3. 유저 boot 로 바꿔서 접속해서 테이블 생성
+    create table notice(
+        notice_id bigint primary key auto_increment,
+        title varchar(100),
+        writer varchar(20),
+        content text,
+        regdate datetime default current_timestamp,
+        hit int default 0
+    ) default character set utf8mb4;
+

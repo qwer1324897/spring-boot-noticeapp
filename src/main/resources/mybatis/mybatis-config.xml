@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+<!-- 데이터베이스 테이블의 컬렴명은 관례상 스네이크 케이스를 쓴다. -->
+<!-- ex) notice_id -->
+<!-- 그러나 자바클래스의 멤버변수에서는 스네이크 케이스보단 카멜케이스를 많이 쓴다. -->
+<!-- ex) class Dog{ -->
+<!--        String dog_name (x) -->
+<!--        String dogName (o)  이걸 더 선호한다. -->
+<!--    } -->
+<!-- 이 때, Mybatis 와 같은 SQL Mapper 는 컬럼명과 필드명이 동일해야만 자동 매핑을 지원한다. -->
+<!-- mapUnderscoreToCamelCase : 컬럼명을 스네이크 케이스로 해도ㅡ 필드와 매핑을 자동화시켜준다. -->
+        <setting name="mapUnderscoreToCamelCase" value=""/>
+    </settings>
+
+<!-- typealias -->
+    <typeAliases>
+        <package name="com.ch.noticeapp.notice.dto.mybatis"/>
+    </typeAliases>
+
+</configuration>
