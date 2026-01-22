@@ -45,7 +45,7 @@ public class Notice {
     private LocalDateTime regdate;
 
     @Column(name = "hit")
-    private Integer hit;    // Integer 를 쓰는 이유는 null 값 비교를 할 수 있으므로. 지금의 경우 int 를 써도 아무상관없음
+    private int hit;    // Integer 를 쓰는 이유는 null 값 비교를 할 수 있으므로. 지금의 경우 int 를 써도 아무상관없음
 
 
     // 개발자가 추후 데이터 1건을 담기 위해 사용될 생성자 정의
@@ -62,7 +62,6 @@ public class Notice {
     }
 
     public void increaseHit() {
-        if(this.hit == null) this.hit = 0;
         hit += 1;
     }
 }
